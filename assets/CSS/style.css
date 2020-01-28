@@ -1,0 +1,27 @@
+textarea {
+    resize: none;
+    border: none;
+  }
+.schedule-block{
+    border: 2px solid black;
+}
+.time-button{
+    padding: 20px;
+    width: 100%;
+}
+.text-block-before{
+    background-color: #888888;
+    color: #eeeeee;
+}
+.text-block-during{
+    background-color: red;
+    color: #eeeeee;
+}
+.text-block-after{
+    background-color: green;
+    color: #eeeeee;
+}
+textarea:focus{
+    outline: transparent style 1px;
+    
+}
