@@ -1,5 +1,6 @@
 var dateLine = $("#date-line");
 var now = moment().hour()
+var tasklist = [];
 
 $("document").ready(function () {
     dateLine.text(moment().format("MMMM Do YYYY"));
@@ -7,17 +8,24 @@ $("document").ready(function () {
     $(".text-block-area").each(function() {
         if(now > $(this).attr("data-time")){
             $(this).attr("class", "form-control text-block-area text-block-before");
-            console.log($(this).attr("data-time"))
         }
         else if(now == $(this).attr("data-time")){
             $(this).attr("class", "form-control text-block-area text-block-during");
-            console.log($(this).attr("data-time"))
         }
         else if(now < $(this).attr("data-time")){
             $(this).attr("class", "form-control text-block-area text-block-after");
-            console.log($(this).attr("data-time"))
         }
     });
     
     
 });
+$(".time-button").on("click", function() {
+    var timeVal = $(this).attr("data-time")
+    console.log(timeVal);
+    var task = $("textarea[data-time=" + timeVal + "]").val();
+    console.log(task);
+    tasklist.push({
+        time: timeVal,
+        task: task
+    })
+})
