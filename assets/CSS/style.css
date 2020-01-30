@@ -1,9 +1,19 @@
+body{
+    background-image: url(../Images/greek-vase.png);
+    font-family: 'Poppins', sans-serif;
+}
+.jumbotron{
+    opacity:75%;
+    color: black;
+}
 textarea {
     resize: none;
     border: none;
   }
 .schedule-block{
     border: 2px solid black;
+    margin: 10px;
+    padding-top: 15px;
 }
 .time-button{
     padding: 20px;
