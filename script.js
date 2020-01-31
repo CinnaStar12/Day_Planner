@@ -37,16 +37,21 @@ $(".time-button").on("click", function () {
 function pullTaskList() {
     var tasklistStr = localStorage.getItem("tasklist");
     tasklist = JSON.parse(tasklistStr)
-    $(".text-block-area").each(function () {
-        var timeVal = $(this).attr("data-time");
-        var index = (timeVal - 9);
-        $(this).text(tasklist[index])
-
-    })
+    if (tasklist == null) {
+        tasklist = [""];
+    }
+    else {
+        $(".text-block-area").each(function () {
+            var timeVal = $(this).attr("data-time");
+            var index = (timeVal - 9);
+            $(this).text(tasklist[index])
+        }
+        )
+    }
 };
 
 $(".btn-danger").on("click", function () {
-    var check = confirm(    "Are you sure you want to delete all tasks? All data will be erased and will not be able to be recovered.")
+    var check = confirm("Are you sure you want to delete all tasks? All data will be erased and will not be able to be recovered.")
     if (check) {
         $(".text-block-area").each(function () {
             $(this).val("")
